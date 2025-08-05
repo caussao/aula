@@ -1,6 +1,7 @@
-package net.jvcaussi.utils;
+package net.jvcaussi.util;
 
-import javax.swing.*;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 
 /**
  * Class Entrada - input class for input of simple input types

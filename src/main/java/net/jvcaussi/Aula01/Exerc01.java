@@ -1,6 +1,7 @@
 package net.jvcaussi.Aula01;
 
-import net.jvcaussi.utils.Entrada;
+import net.jvcaussi.util.Calculos;
+import net.jvcaussi.util.Entrada;
 
 public class Exerc01 {
     public static void main(String[] args) {
@@ -12,11 +13,9 @@ public class Exerc01 {
             ladoB = Entrada.leiaDouble("Insira o tamanho do lado B");
             ladoC = Entrada.leiaDouble("Insira o tamanho do lado C");
             
-            if (ladoA + ladoB > ladoC &&
-                ladoA + ladoC > ladoB &&
-                ladoB + ladoC > ladoA) {
+            if (Calculos.validarTriangulo(ladoA, ladoB, ladoC) == true){
                 isTriangulo = true;
-                }
+            }
             else {
                 Entrada.leiaChar("a área do triângulo não é válida, insira novamente", " ");
                 }
@@ -24,15 +23,10 @@ public class Exerc01 {
         
         double numS = ((ladoA + ladoB + ladoC) /2);
 
-        double area = calcularArea(ladoA, ladoB, ladoC, numS);
+        double area = Calculos.calcularArea(ladoA, ladoB, ladoC, numS);
 
         Entrada.leiaChar("a área do seu triângulo é "+area, " ");
 
-    }
-
-    public static double calcularArea(double ladoA, double ladoB, double ladoC, double numS){
-        double area = Math.sqrt(numS*(numS-ladoA) * (numS-ladoB) * (numS-ladoC));
-        return area;
     }
 
 }
